@@ -41,3 +41,24 @@ body {
 .terminal input[type="text"] {
     display: none;
 }
+
+/* Media query for iPhone screens */
+@media (max-width: 375px) {
+    body {
+        font-size: 20px;
+    }
+
+    .terminal {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .terminal .prompt-text {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .terminal input {
+        font-size: 18px;
+    }
+}
