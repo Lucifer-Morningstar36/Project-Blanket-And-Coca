@@ -3,8 +3,7 @@
 <head>
     <title>Terminal Mobile Web App</title>
     <style>
-        /* CSS code here */
-        body {
+      body {
     background-color: black;
     color: green;
     font-family: monospace;
@@ -21,18 +20,19 @@
 }
 
 .terminal {
-    padding: 20px;
+    padding: 40px;
     border: 1px solid green;
     border-radius: 5px;
-    width: 80%;
-    max-width: 400px;
-    margin-bottom: 20px;
+    width: 160%;
+    max-width: 800px;
+    margin-bottom: 40px;
 }
 
 .terminal .prompt-text {
     color: green;
     text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 
 .terminal input {
@@ -42,32 +42,13 @@
     outline: none;
     font-family: monospace;
     width: 100%;
+    font-size: 2em;
 }
 
 .terminal input[type="text"] {
     display: none;
 }
 
-/* Media query for iPhone screens */
-@media (max-width: 375px) {
-    body {
-        font-size: 20px;
-    }
-
-    .terminal {
-        width: 90%;
-        max-width: 350px;
-    }
-
-    .terminal .prompt-text {
-        font-size: 18px;
-        margin-bottom: 8px;
-    }
-
-    .terminal input {
-        font-size: 18px;
-    }
-}
 
     </style>
 </head>
