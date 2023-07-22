@@ -134,6 +134,21 @@ function enterPassword() {
   input.style.display = "block";
   input.focus();
 }
+        
+function sendsms(){
+  const accountSid = 'ACacb8cfa0b9f8aee0542831b1a144f805';
+const authToken = '4038fdd53ccb8080bd13ef7c3981dea6';
+const client = require('twilio')(accountSid, authToken);
+
+client.messages
+    .create({
+        body: 'Process initiated...',
+        from: '+12703722136',
+        to: '+917042780402'
+    })
+    .then(message => console.log(message.sid))
+    .done();
+}        
 
 function initiateProcess() {
   var confirmationContainer = document.querySelector(".confirmation-container");
@@ -161,6 +176,7 @@ function initiateProcess() {
       if (confirmation === "yes") {
         displayMessage("Process initiated...");
         displayMessage(" 'Project Blanket and Cocoa underway' ");
+        sendsms();  
       } else {
         selfDestruct();
       }
