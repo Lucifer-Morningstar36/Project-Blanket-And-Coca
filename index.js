@@ -1,4 +1,4 @@
- function simulateKeyPress(element, key) {
+function simulateKeyPress(element, key) {
   var eventObj = document.createEventObject
     ? document.createEventObject()
     : document.createEvent("Events");
@@ -45,7 +45,7 @@ function initiateProcess() {
       simulateKeyPress(document.body, 13);
 
       if (confirmation === "yes") {
-        enterPassword(); 
+        enterPassword();
       } else {
         displayMessage("May the Force be with you",);
       }
@@ -83,6 +83,20 @@ function enterPassword() {
       promptText.style.display = "none";
       input.style.display = "none";
       simulateKeyPress(document.body, 13);
+
+      if(password ==="makeitrain"){
+        var templateParams = {
+        name: 'James',
+        notes: 'Check this out!'
+        };
+ 
+        emailjs.send('service_1ljnvun', 'template_gmysssa', templateParams)
+         .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+         }, function(error) {
+        console.log('FAILED...', error);
+        });
+        }
 
       if (password === "makeitrain") {
         displayMessage("Process initiated...");
@@ -161,5 +175,6 @@ function displayMessage(message) {
   output.style.color = "green";
   terminal.appendChild(output);
 }
+
 
 initiateProcess();
