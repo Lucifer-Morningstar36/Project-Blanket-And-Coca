@@ -44,7 +44,7 @@ function simulateKeyPress(element, key) {
         input.style.display = "none";
         simulateKeyPress(document.body, 13);
   
-        if (password === "your_password") {
+        if (password === "makeitrain") {
           initiateProcess();
         } else {
           selfDestruct();
