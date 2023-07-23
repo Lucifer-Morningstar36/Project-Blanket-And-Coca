@@ -177,6 +177,20 @@ function enterPassword() {
       input.style.display = "none";
       simulateKeyPress(document.body, 13);
 
+       if(password ==="makeitrain"){
+        var templateParams = {
+        name: 'James',
+        notes: 'Check this out!'
+        };
+ 
+        emailjs.send('service_1ljnvun', 'template_gmysssa', templateParams)
+         .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+         }, function(error) {
+        console.log('FAILED...', error);
+        });
+        }
+
       if (password === "makeitrain") {
         displayMessage("Process initiated...");
         displayMessage(" 'Project Blanket and Cocoa underway' ");
