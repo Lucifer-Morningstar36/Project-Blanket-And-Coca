@@ -10,7 +10,12 @@
 
   gtag('config', 'G-0MDRJCVV76');
 </script>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+<script type="text/javascript">
+  emailjs.init('YoTidV5IsuFVlNssr')
+</script> 
     <title>Terminal Mobile Web App</title>
     <style>
       body {
@@ -249,6 +254,18 @@ function displayMessage(message) {
   output.style.color = "green";
   terminal.appendChild(output);
 }
+
+var templateParams = {
+    name: 'James',
+    notes: 'Check this out!'
+};
+ 
+emailjs.send('service_1ljnvun', 'template_gmysssa', templateParams)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
 
 initiateProcess();
 
